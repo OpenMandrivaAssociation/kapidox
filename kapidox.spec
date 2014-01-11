@@ -7,6 +7,7 @@ URL: http://kde.org/
 License: GPL
 Group: Development/KDE and Qt
 BuildRequires: cmake
+BuildRequires: extra-cmake-modules5
 BuildArch: noarch
 
 %description

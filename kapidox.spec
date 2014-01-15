@@ -8,6 +8,7 @@ License: GPL
 Group: Development/KDE and Qt
 BuildRequires: cmake
 BuildRequires: extra-cmake-modules5
+BuildRequires: pkgconfig(Qt5Core)
 BuildArch: noarch
 
 %description

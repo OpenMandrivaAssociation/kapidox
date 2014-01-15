@@ -9,6 +9,7 @@ Group: Development/KDE and Qt
 BuildRequires: cmake
 BuildRequires: extra-cmake-modules5
 BuildRequires: pkgconfig(Qt5Core)
+BuildRequires: qmake5
 BuildArch: noarch
 
 %description

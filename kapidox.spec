@@ -1,6 +1,6 @@
 Name: kapidox
-Version: 4.95.0
-Release: 2
+Version: 4.96.0
+Release: 1
 Source0: http://ftp5.gwdg.de/pub/linux/kde/unstable/frameworks/4.95.0/%{name}-%{version}.tar.xz
 Summary: Base files for KDE Frameworks 5 API documentation
 URL: http://kde.org/
@@ -26,5 +26,6 @@ Base files for KDE Frameworks 5 API documentation
 %makeinstall_std -C build
 
 %files
-%{_datadir}/LICENSES
-%{_docdir}/HTML
+%{_bindir}/*
+%{_prefix}/lib/python2.7/site-packages/kapidox
+%{_prefix}/lib/python2.7/site-packages/kapidox*.egg-info

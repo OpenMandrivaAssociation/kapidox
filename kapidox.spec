@@ -1,31 +1,40 @@
+%define debug_package %{nil}
+
 Name: kapidox
-Version: 4.96.0
+Version: 4.99.0
 Release: 1
-Source0: http://ftp5.gwdg.de/pub/linux/kde/unstable/frameworks/4.95.0/%{name}-%{version}.tar.xz
-Summary: Base files for KDE Frameworks 5 API documentation
+Source0: http://ftp5.gwdg.de/pub/linux/kde/unstable/frameworks/%{version}/%{name}-%{version}.tar.xz
+Summary: Scripts and data for building API documentation
 URL: http://kde.org/
 License: GPL
-Group: Development/KDE and Qt
+Group: System/Libraries
 BuildRequires: cmake
+BuildRequires: qmake5
 BuildRequires: extra-cmake-modules5
 BuildRequires: pkgconfig(Qt5Core)
-BuildRequires: qmake5
-BuildArch: noarch
+BuildRequires: cmake(KF5DocTools)
+BuildRequires: cmake(PythonInterp)
+BuildRequires: ninja
 
 %description
-Base files for KDE Frameworks 5 API documentation
+Scripts and data for building API documentation (dox)
+in a standard format and style
 
 %prep
 %setup -q
-%cmake
+%cmake -G Ninja
 
 %build
-%make -C build
+ninja -C build
 
 %install
-%makeinstall_std -C build
+DESTDIR="%{buildroot}" ninja -C build install %{?_smp_mflags}
 
 %files
-%{_bindir}/*
-%{_prefix}/lib/python2.7/site-packages/kapidox
-%{_prefix}/lib/python2.7/site-packages/kapidox*.egg-info
+%{_bindir}/depdiagram-generate
+%{_bindir}/depdiagram-generate-all
+%{_bindir}/depdiagram-prepare
+%{_bindir}/kgenapidox
+%{_bindir}/kgenframeworksapidox
+%{_prefix}/lib/python*/site-packages/kapidox
+%{_prefix}/lib/python*/site-packages/kapidox*.egg-info

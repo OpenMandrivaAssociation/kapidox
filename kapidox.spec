@@ -2,7 +2,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: kapidox
-Version: 5.7.0
+Version: 5.8.0
 Release: 1
 Source0: http://ftp5.gwdg.de/pub/linux/kde/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: Scripts and data for building API documentation
@@ -19,7 +19,7 @@ BuildRequires: ninja
 
 %description
 Scripts and data for building API documentation (dox)
-in a standard format and style
+in a standard format and style.
 
 %prep
 %setup -q

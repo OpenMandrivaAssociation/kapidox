@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   kapidox-5.13.0.tar.xz: ecdad9dace0ed3cf7d3b5fe63107654332bf4b1d
+sources:
+  kapidox-5.14.0.tar.xz: d52d4f6c32a93ed022ef7c318869260595d22bcf

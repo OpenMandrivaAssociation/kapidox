@@ -36,5 +36,3 @@ in a standard format and style.
 %{_prefix}/lib/python*/site-packages/kapidox
 %{_prefix}/lib/python*/site-packages/kapidox*.egg-info
 %{_mandir}/man1/depdiagram-*.1.*
-%{_mandir}/man1/kgenapidox.1.*
-%{_mandir}/man1/kgenframeworksapidox.1.*

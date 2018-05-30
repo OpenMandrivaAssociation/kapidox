@@ -12,7 +12,6 @@ Group: System/Libraries
 BuildRequires: cmake(ECM)
 BuildRequires: pkgconfig(Qt5Core)
 BuildRequires: cmake(KF5DocTools)
-BuildRequires: cmake(PythonInterp)
 
 %description
 Scripts and data for building API documentation (dox)

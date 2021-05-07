@@ -1,9 +1,9 @@
-%define debug_package %{nil}
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
+%define debug_package %{nil}
 
 Name: kapidox
-Version:	5.81.0
-Release:	2
+Version:	5.82.0
+Release:	1
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: Scripts and data for building API documentation
 URL: http://kde.org/

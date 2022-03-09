@@ -2,7 +2,7 @@
 %define debug_package %{nil}
 
 Name: kapidox
-Version:	5.91.0
+Version:	5.92.0
 Release:	1
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: Scripts and data for building API documentation
@@ -19,20 +19,18 @@ Scripts and data for building API documentation (dox)
 in a standard format and style.
 
 %prep
-%setup -q
-%cmake_kde5
+%autosetup -p1
 
 %build
-%ninja -C build
+python setup.py build
 
 %install
-%ninja_install -C build
+python setup.py install --prefix=%{_prefix} --root=%{buildroot}
 
 %files
-%{_bindir}/depdiagram-generate
-%{_bindir}/depdiagram-generate-all
-%{_bindir}/depdiagram-prepare
-%{_bindir}/kapidox_generate
+%{_bindir}/kapidox-generate
+%{_bindir}/kapidox-depdiagram-generate
+%{_bindir}/kapidox-depdiagram-prepare
+%{_bindir}/depdiagram_generate_all
 %{_prefix}/lib/python*/site-packages/kapidox
 %{_prefix}/lib/python*/site-packages/kapidox*.egg-info
-%{_mandir}/man1/depdiagram-*.1.*

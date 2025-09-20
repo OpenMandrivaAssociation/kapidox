@@ -2,7 +2,7 @@
 %define debug_package %{nil}
 
 Name: kapidox
-Version:	5.116.0
+Version:	6.18.0
 Release:	1
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: Scripts and data for building API documentation
@@ -10,9 +10,9 @@ URL: https://kde.org/
 License: GPL
 Group: System/Libraries
 BuildRequires: cmake(ECM)
-BuildRequires: pkgconfig(Qt5Core)
-BuildRequires: cmake(KF5DocTools)
-BuildRequires: python3dist(setuptools)
+BuildRequires: pkgconfig(Qt6Core)
+BuildRequires: cmake(KF6DocTools)
+BuildRequires: python%{pyver}dist(setuptools)
 
 %description
 Scripts and data for building API documentation (dox)
